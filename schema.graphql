@@ -1,0 +1,65 @@
+type Query {
+  getOneWord: Word!
+  getAllWords: [Word]!
+  getOnePoem(id:ID!): Poem!
+  getAllPoems: [Poem]!
+  getOneAdmin: Admin!
+  getAllAdmins: [Admin]!
+}
+
+type Mutation {
+  createNewWord(data: InputWord!): Word!
+  updateNewWord(id: ID!, data: InputWord!): Word!
+  createNewPoem(data: InputPoem!): Poem!
+  updateOnePoem(id: ID!, data: InputPoem!): Poem!
+  deleteOnePoem(id: ID!): Poem!
+  createNewAdmin(data: InputAdmin!): Admin!
+  updareOneAdmin(id: ID!, data: InputAdmin!): Admin!
+}
+
+type Login {
+  token: String!
+  message: String!
+}
+
+type Word {
+  _id: ID!
+  name: String!
+  language: String!
+  text: String
+}
+
+input InputWord {
+  name: String!
+  language: String!
+}
+
+type Poem {
+  _id:ID!
+  title: String!
+  text: String!
+  author: String!
+}
+
+input InputPoem {
+  title: String
+  text: String
+  author: String
+}
+
+type Admin {
+  _id: ID!
+  user: String!
+  first_name: String!
+  first_last_name: String!
+  second_last_name: String
+  email: String!
+}
+
+input InputAdmin {
+  first_name: String!
+  first_last_name: String!
+  second_last_name: String
+  birth_date: String!
+  email: String!
+}

@@ -1,15 +1,17 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "API for femurlab proyects",
+  "description": "API for dictionary project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "author": "Federico",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.9.0"
+    "eslint": "^7.9.0",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "@graphql-tools/graphql-file-loader": "^6.2.2",

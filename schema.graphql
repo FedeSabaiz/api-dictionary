@@ -10,11 +10,13 @@ type Query {
 type Mutation {
   createNewWord(data: InputWord!): Word!
   updateNewWord(id: ID!, data: InputWord!): Word!
+  deleteOneWord(id: ID!): Word!
   createNewPoem(data: InputPoem!): Poem!
   updateOnePoem(id: ID!, data: InputPoem!): Poem!
   deleteOnePoem(id: ID!): Poem!
   createNewAdmin(data: InputAdmin!): Admin!
-  updareOneAdmin(id: ID!, data: InputAdmin!): Admin!
+  updateOneAdmin(id: ID!, data: InputAdmin!): Admin!
+  deleteOneAdmin(id: ID!): Admin!
 }
 
 type Login {
@@ -26,12 +28,13 @@ type Word {
   _id: ID!
   name: String!
   language: String!
-  text: String
+  traduction: String!
 }
 
 input InputWord {
   name: String!
   language: String!
+  traduction: String!
 }
 
 type Poem {

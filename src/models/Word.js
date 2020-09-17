@@ -4,14 +4,22 @@ const Schema = mongoose.Schema;
 const WordSchema = new Schema({
   name: {
     type: String,
-    require: true
+    required: true
   },
   language: {
     type: String,
-    require: true
+    required: true
+  },
+  traduction: {
+    type: String,
+    required: true
+  },
+  is_active: {
+    type: Boolean,
+    default: true
   }
 }, {
   timestamps: true
 });
 
-exports.module = mongoose.model("word", WordSchema);
+module.exports = mongoose.model("word", WordSchema);
